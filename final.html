@@ -151,76 +151,7 @@ hideAll()
 document.myNum = 10
 showThis(document.myNum)
 }">
-   <script> 
-
-     
-
-   // document.myForm.action = 'https://api.spark.io/v1/devices/' + document.all.myDeviceId.value + '/' + document.all.myFunctionName.value
-   //myToken      
-
-        var event_name = "GESTURE-EVENT"; 
-
-      //  var eventSource = new EventSource("https://api.spark.io/v1/devices/330036001847343438323536/events/?access_token=29cec34f067d474baad59f1eb6729ebfe1222b46"); 
-        var eventSource = new EventSource("https://api.spark.io/v1/devices/"+ document.all.myDeviceId.value + "/events/?access_token=" + document.all.myToken.value); 
-
-         
-
-        eventSource.addEventListener('open', function(e) { 
-
-            console.log("Opened!"); },false); 
-
-  
-
-        eventSource.addEventListener('error', function(e) { 
-
-            console.log("Errored!"); },false); 
-
-  
-
-        eventSource.addEventListener(event_name, function(e) { 
-
-            var parsedData = JSON.parse(e.data); 
-
-  
-
-            //document.getElementById("sensor-info").innerHTML += parsedData.data + '<br>' 
-
-             
-
-            if("UP" == parsedData.data.toUpperCase()){ 
-
-                console.log('First') 
-                document.getElementById("First").click()
-                document.getElementById("myNumber").innerHTML = document.myNum
-            } 
-
-            else if("DOWN" == parsedData.data.toUpperCase()){ 
-
-                    console.log('Last') 
-                    document.getElementById("Last").click()
-                    document.getElementById("myNumber").innerHTML = document.myNum
-            } 
-
-            else if("LEFT" == parsedData.data.toUpperCase()){ 
-
-                    console.log('left') 
-                    document.getElementById("myLeftButton").click()
-                    document.getElementById("myNumber").innerHTML = document.myNum
-            } 
-
-            else if("RIGHT" == parsedData.data.toUpperCase()){ 
-
-                    console.log('right') 
-                   document.getElementById("myRightButton").click()
-                   document.getElementById("myNumber").innerHTML = document.myNum
-
-            } 
-
-             
-
-        }, false); 
-
-    </script> 
+ 
 
   
 
@@ -531,5 +462,100 @@ Get this from the settings area when logged into <a href="http://particle.io/bui
 }"><br>
 
 </font>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     <script> 
+
+     
+
+   // document.myForm.action = 'https://api.spark.io/v1/devices/' + document.all.myDeviceId.value + '/' + document.all.myFunctionName.value
+   //myToken      
+
+        var event_name = "GESTURE-EVENT"; 
+
+      //  var eventSource = new EventSource("https://api.spark.io/v1/devices/330036001847343438323536/events/?access_token=29cec34f067d474baad59f1eb6729ebfe1222b46"); 
+        var eventSource = new EventSource("https://api.spark.io/v1/devices/"+ document.all.myDeviceId.value + "/events/?access_token=" + document.all.myToken.value); 
+
+         
+
+        eventSource.addEventListener('open', function(e) { 
+
+            console.log("Opened!"); },false); 
+
+  
+
+        eventSource.addEventListener('error', function(e) { 
+
+            console.log("Errored!"); },false); 
+
+  
+
+        eventSource.addEventListener(event_name, function(e) { 
+
+            var parsedData = JSON.parse(e.data); 
+
+  
+
+            //document.getElementById("sensor-info").innerHTML += parsedData.data + '<br>' 
+
+             
+
+            if("UP" == parsedData.data.toUpperCase()){ 
+
+                console.log('First') 
+                document.getElementById("First").click()
+                document.getElementById("myNumber").innerHTML = document.myNum
+            } 
+
+            else if("DOWN" == parsedData.data.toUpperCase()){ 
+
+                    console.log('Last') 
+                    document.getElementById("Last").click()
+                    document.getElementById("myNumber").innerHTML = document.myNum
+            } 
+
+            else if("LEFT" == parsedData.data.toUpperCase()){ 
+
+                    console.log('left') 
+                    document.getElementById("myLeftButton").click()
+                    document.getElementById("myNumber").innerHTML = document.myNum
+            } 
+
+            else if("RIGHT" == parsedData.data.toUpperCase()){ 
+
+                    console.log('right') 
+                   document.getElementById("myRightButton").click()
+                   document.getElementById("myNumber").innerHTML = document.myNum
+
+            } 
+
+             
+
+        }, false); 
+
+    </script> 
+   
+   
+   
+   
+   
+   
 </body>
 </html>
