@@ -6,6 +6,79 @@
 
 <!-- ********************* DO NOT MESS WITH THIS ADVANCED AJAX STUFF -->
 <!-- ********************* Look at the bottom of the page for student area -->
+   
+<script>
+    
+function hideAll(){
+    
+document.getElementById('move1').style.visibility = 'hidden'
+document.getElementById('move2').style.visibility = 'hidden'
+document.getElementById('move3').style.visibility = 'hidden'
+document.getElementById('move4').style.visibility = 'hidden' 
+document.getElementById('move5').style.visibility = 'hidden' 
+document.getElementById('move6').style.visibility = 'hidden' 
+document.getElementById('move7').style.visibility = 'hidden' 
+document.getElementById('move8').style.visibility = 'hidden' 
+document.getElementById('move9').style.visibility = 'hidden' 
+document.getElementById('move10').style.visibility = 'hidden' 
+    
+}    
+    
+function showThis(myNumber){
+    
+ document.getElementById('move' + myNumber.toString() ).style.visibility = 'visible'
+
+}    
+
+
+
+document.myNum = 2    
+    
+</script>
+
+
+
+
+
+
+
+<input id="myLeftButton" type=button value="goLeft" onClick="{
+  
+  document.myNum += 1
+  console.log(document.myNum)
+
+  hideAll()
+  showThis(document.myNum)
+  if (document.myNum >= 10){
+     document.myNum = 0
+  }
+
+}">
+<input id="myRightButton" type=button value="goRight" onClick="{
+  
+  document.myNum -= 1
+  console.log(document.myNum)
+
+  hideAll()
+  showThis(document.myNum)
+  if (document.myNum <= 1){
+     document.myNum = 11
+  }
+
+}">
+
+
+
+<img id="move1" width="100px" src="https://img00.deviantart.net/e49f/i/2016/080/e/8/spaceship_02_by_no_look_pass-d9vwjih.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move2" width="100px" src="https://www.freeiconspng.com/uploads/spacecraft-png-6.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move3" width="100px" src="http://www.basszilla.net/images/laser.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move4" width="100px" src="https://wallpaperbrowse.com/media/cache/68/76/6876e7641cb4056c6c56ace4b0b0def5.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move5" width="100px" src="https://wallpaperbrowse.com/media/cache/04/e3/04e37bd3983e1958a854c03b7aa921b2.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move6" width="100px" src="https://wallpaperbrowse.com/media/cache/5a/66/5a66ddb35ce376871d5bce031a66af5e.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move7" width="100px" src="https://wallpaperbrowse.com/media/cache/5b/38/5b38eabb2f9a58cf7a3d08d9d1db5e36.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move8" width="100px" src="https://wallpaperbrowse.com/media/cache/3d/06/3d0656e1d7c10cabece7f4174da31a75.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move9" width="100px" src="https://wallpaperbrowse.com/media/cache/7f/21/7f21901f21d90b57d57a1079a26db748.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move10" width="100px" src="https://wallpaperbrowse.com/media/cache/c6/30/c630fd7259904242af1ad3f62c5af25b.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
     <script> 
 
      
