@@ -161,7 +161,7 @@ showThis(document.myNum)
         var event_name = "GESTURE-EVENT"; 
 
       //  var eventSource = new EventSource("https://api.spark.io/v1/devices/330036001847343438323536/events/?access_token=29cec34f067d474baad59f1eb6729ebfe1222b46"); 
-        var eventSource = new EventSource("https://api.spark.io/v1/devices/"+ document.all.myDeviceId.value + document.all.myToken.value); 
+        var eventSource = new EventSource("https://api.spark.io/v1/devices/"+ document.all.myDeviceId.value + '/events/?access_token=' + document.all.myToken.value); 
 
          
 
