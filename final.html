@@ -140,13 +140,13 @@ clearInterval(document.fred)
 
 
 
-<input id="First" type=button value="up" onClick="{
+<input id="First" type=button value="First" onClick="{
 hideAll()
 document.myNum = 1
 showThis(document.myNum)
 }">
 
-<input id="Last" type=button value="down" onClick="{
+<input id="Last" type=button value="last" onClick="{
 hideAll()
 document.myNum = 10
 showThis(document.myNum)
@@ -187,14 +187,14 @@ showThis(document.myNum)
 
             if("UP" == parsedData.data.toUpperCase()){ 
 
-                console.log('UP') 
+                console.log('First') 
                 document.getElementById("First").click()
                 document.getElementById("myNumber").innerHTML = document.myNum
             } 
 
             else if("DOWN" == parsedData.data.toUpperCase()){ 
 
-                    console.log('down') 
+                    console.log('Last') 
                     document.getElementById("Last").click()
                     document.getElementById("myNumber").innerHTML = document.myNum
             } 
