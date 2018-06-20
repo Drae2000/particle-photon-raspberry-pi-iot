@@ -189,24 +189,28 @@ showThis(document.myNum)
 
                 console.log('UP') 
                 document.getElementById("First").click()
+                document.getElementById("myNumber").innerHTML = document.myNum
             } 
 
             else if("DOWN" == parsedData.data.toUpperCase()){ 
 
                     console.log('down') 
                     document.getElementById("Last").click()
+                    document.getElementById("myNumber").innerHTML = document.myNum
             } 
 
             else if("LEFT" == parsedData.data.toUpperCase()){ 
 
                     console.log('left') 
                     document.getElementById("myLeftButton").click()
+                    document.getElementById("myNumber").innerHTML = document.myNum
             } 
 
             else if("RIGHT" == parsedData.data.toUpperCase()){ 
 
                     console.log('right') 
                    document.getElementById("myRightButton").click()
+                   document.getElementById("myNumber").innerHTML = document.myNum
 
             } 
 
@@ -219,7 +223,7 @@ showThis(document.myNum)
   
 
   
-   <div id="myNum"></div><br>
+   <div id="myNumber"></div><br>
 <div id="sensor-info"></div><br><br><br><br><br><br> 
 <script type="text/javascript">
    
