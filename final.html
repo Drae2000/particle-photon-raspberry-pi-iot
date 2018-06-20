@@ -6,8 +6,81 @@
 
 <!-- ********************* DO NOT MESS WITH THIS ADVANCED AJAX STUFF -->
 <!-- ********************* Look at the bottom of the page for student area -->
+    <script> 
 
+     
+
+         
+
+        var event_name = "GESTURE-EVENT"; 
+
+        var eventSource = new EventSource("https://api.spark.io/v1/devices/330036001847343438323536/events/?access_token=29cec34f067d474baad59f1eb6729ebfe1222b46"); 
+
+         
+
+        eventSource.addEventListener('open', function(e) { 
+
+            console.log("Opened!"); },false); 
+
+  
+
+        eventSource.addEventListener('error', function(e) { 
+
+            console.log("Errored!"); },false); 
+
+  
+
+        eventSource.addEventListener(event_name, function(e) { 
+
+            var parsedData = JSON.parse(e.data); 
+
+  
+
+            document.getElementById("sensor-info").innerHTML += parsedData.data + '<br>' 
+
+             
+
+            if("UP" == parsedData.data.toUpperCase()){ 
+
+                console.log('UP') 
+
+            } 
+
+            else if("DOWN" == parsedData.data.toUpperCase()){ 
+
+                    console.log('down') 
+
+            } 
+
+            else if("LEFT" == parsedData.data.toUpperCase()){ 
+
+                    console.log('left') 
+
+            } 
+
+            else if("RIGHT" == parsedData.data.toUpperCase()){ 
+
+                    console.log('right') 
+
+            } 
+
+             
+
+        }, false); 
+
+    </script> 
+
+  
+
+  
+
+<div id="sensor-info">...</div> 
 <script type="text/javascript">
+   
+   
+   
+   
+   
 <!--
 var loadingmessage = 'Processing...';
 function setAjax(){
