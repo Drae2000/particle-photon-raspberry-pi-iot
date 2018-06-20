@@ -21,19 +21,37 @@ document.getElementById('move7').style.visibility = 'hidden'
 document.getElementById('move8').style.visibility = 'hidden' 
 document.getElementById('move9').style.visibility = 'hidden' 
 document.getElementById('move10').style.visibility = 'hidden' 
+
+document.getElementById('move1').style.left='100px' 
+document.getElementById('move2').style.left='100px' 
+document.getElementById('move3').style.left='100px' 
+document.getElementById('move4').style.left='100px' 
+document.getElementById('move5').style.left='100px' 
+document.getElementById('move6').style.left='100px' 
+document.getElementById('move7').style.left='100px' 
+document.getElementById('move8').style.left='100px' 
+document.getElementById('move9').style.left='100px' 
+document.getElementById('move10').style.left='100px' 
+
+
+
+
     
 }    
     
 function showThis(myNumber){
     
  document.getElementById('move' + myNumber.toString() ).style.visibility = 'visible'
+ 
+
+ 
 
 }    
 
 
 
 document.myNum = 2    
-    
+
 </script>
 
 
@@ -43,44 +61,81 @@ document.myNum = 2
 
 
 <input id="myLeftButton" type=button value="goLeft" onClick="{
-  
-  document.myNum += 1
-  console.log(document.myNum)
+   clearInterval(document.fred) 
+   document.myOld = document.myNum
+   document.fred = setInterval(function (){
+     
+   document.getElementById('move' + document.myOld.toString() ).style.left = parseInt( document.getElementById('move' + document.myOld.toString() ).style.left)-100+'px'
+    if ( parseInt(document.getElementById('move' + document.myOld.toString() ).style.left) <= -500){
+    
+        clearInterval(document.fred) 
+        
+        document.myNum -= 1
 
-  hideAll()
-  showThis(document.myNum)
-  if (document.myNum >= 10){
-     document.myNum = 0
-  }
+        if (document.myNum <= 0){
+           document.myNum = 10
+        }
+  
+        console.log(document.myNum)
+        hideAll()
+        showThis(document.myNum)
+    }
+ }, 30)
 
 }">
 <input id="myRightButton" type=button value="goRight" onClick="{
+clearInterval(document.fred) 
+
+  document.myOld = document.myNum
+   document.fred = setInterval(function (){
+     
+     document.getElementById('move' + document.myOld.toString() ).style.left = parseInt( document.getElementById('move' + document.myOld.toString() ).style.left)+100+'px'
+    if ( parseInt(document.getElementById('move' + document.myOld.toString() ).style.left) >= 2000 ){
+            
+       clearInterval(document.fred)         
+       document.myNum += 1
+        if (document.myNum >= 10){
+           document.myNum = 1
+        }
+        console.log(document.myNum)
+        hideAll()
+        showThis(document.myNum)
+    }
+ }, 30)
   
-  document.myNum -= 1
 
-  if (document.myNum <= 0){
-     document.myNum = 10
-  }
+  
 
-  console.log(document.myNum)
-  hideAll()
-  showThis(document.myNum)
+  
   
 }">
 
 
 
-<img id="move1" width="100px" src="https://img00.deviantart.net/e49f/i/2016/080/e/8/spaceship_02_by_no_look_pass-d9vwjih.png" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move2" width="100px" src="https://www.freeiconspng.com/uploads/spacecraft-png-6.png" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move3" width="100px" src="http://www.basszilla.net/images/laser.png" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move4" width="100px" src="https://wallpaperbrowse.com/media/cache/68/76/6876e7641cb4056c6c56ace4b0b0def5.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move5" width="100px" src="https://wallpaperbrowse.com/media/cache/04/e3/04e37bd3983e1958a854c03b7aa921b2.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move6" width="100px" src="https://wallpaperbrowse.com/media/cache/5a/66/5a66ddb35ce376871d5bce031a66af5e.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move7" width="100px" src="https://wallpaperbrowse.com/media/cache/5b/38/5b38eabb2f9a58cf7a3d08d9d1db5e36.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move8" width="100px" src="https://wallpaperbrowse.com/media/cache/3d/06/3d0656e1d7c10cabece7f4174da31a75.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move9" width="100px" src="https://wallpaperbrowse.com/media/cache/7f/21/7f21901f21d90b57d57a1079a26db748.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-<img id="move10" width="100px" src="https://wallpaperbrowse.com/media/cache/c6/30/c630fd7259904242af1ad3f62c5af25b.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
-    <script> 
+<img id="move1" width="400px" src="https://img00.deviantart.net/e49f/i/2016/080/e/8/spaceship_02_by_no_look_pass-d9vwjih.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move2" width="400px" src="https://www.freeiconspng.com/uploads/spacecraft-png-6.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move3" width="400px" src="http://www.basszilla.net/images/laser.png" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move4" width="400px" src="https://wallpaperbrowse.com/media/cache/68/76/6876e7641cb4056c6c56ace4b0b0def5.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move5" width="400px" src="https://wallpaperbrowse.com/media/cache/04/e3/04e37bd3983e1958a854c03b7aa921b2.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move6" width="400px" src="https://wallpaperbrowse.com/media/cache/5a/66/5a66ddb35ce376871d5bce031a66af5e.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move7" width="400px" src="https://wallpaperbrowse.com/media/cache/5b/38/5b38eabb2f9a58cf7a3d08d9d1db5e36.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move8" width="400px" src="https://wallpaperbrowse.com/media/cache/3d/06/3d0656e1d7c10cabece7f4174da31a75.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move9" width="400px" src="https://wallpaperbrowse.com/media/cache/7f/21/7f21901f21d90b57d57a1079a26db748.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+<img id="move10" width="400px" src="https://wallpaperbrowse.com/media/cache/c6/30/c630fd7259904242af1ad3f62c5af25b.jpg" style="visibility:visible; position:absolute; left:100px; top:100px">
+
+
+
+
+<script>
+    
+    
+     hideAll()
+ 
+    document.getElementById('move1' ).style.visibility = 'visible'
+    document.myNum = 1
+    
+</script> 
+   <script> 
 
      
 
